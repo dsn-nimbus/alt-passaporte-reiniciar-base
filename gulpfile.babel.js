@@ -1,7 +1,6 @@
 import gulp from 'gulp';
 import uglify from 'gulp-uglify';
 import coveralls from 'gulp-coveralls';
-import cssmin from 'gulp-cssmin';
 import concat from 'gulp-concat';
 import rename from 'gulp-rename';
 import {Server as Karma} from 'karma';
@@ -10,17 +9,7 @@ const _coverage = 'coverage/**/lcov.info';
 const _scripts = 'src/**/*.js';
 const _styles = 'src/**/*.css';
 const _script = 'alt-passaporte-reiniciar-base.js';
-const _style = 'alt-passaporte-reiniciar-base.css';
 const _dist = 'dist';
-
-gulp.task('build-css', () => {
-  return gulp.src(_styles)
-    .pipe(concat(_style.toLowerCase()))
-    .pipe(gulp.dest(_dist))
-    .pipe(cssmin())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest(_dist));
-});
 
 gulp.task('build', ['unit_test', 'build-css'], () => {
   return gulp.src(_scripts)

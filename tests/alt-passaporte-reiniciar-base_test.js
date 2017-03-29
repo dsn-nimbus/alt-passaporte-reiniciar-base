@@ -1,25 +1,29 @@
 "use strict";
 
-describe('alt-passaporte-reiniciar-base', function() {
-  var _GreetingService;
+describe('alt.passaporte-reiniciar-base', function() {
+  var _rootScope, _httpBackend;
+  var _AltPassaporteReiniciadorBase;
 
-  beforeEach(module('alt-passaporte-reiniciar-base'));
+  beforeEach(module('alt.passaporte-reiniciar-base'));
 
   beforeEach(inject(function($injector) {
-    _GreetingService = $injector.get('GreetingService');
+    _rootScope = $injector.get('$rootScope');
+    _httpBackend = $injector.get('$httpBackend');
+
+    _AltPassaporteReiniciadorBase = $injector.get('AltPassaporteReiniciadorBasePassaporte');
   }));
 
-  describe('sayHello', function() {
-    it('should call the say hello function', function() {
-      spyOn(_GreetingService, 'sayHello').and.callFake(angular.noop);
+  describe('provider', function() {
+    it('deve ter URL_BASE com a informação correta', function() {
+      expect(_AltPassaporteReiniciadorBase.URL_BASE).toEqual('https://passaporte2-dev.alterdata.com.br');
+    })
+  })
 
-      _GreetingService.sayHello();
+  describe('service', function() {
+    describe('reiniciar', function() {
+      it('deve', function() {
 
-      expect(_GreetingService.sayHello).toHaveBeenCalled();
-    });
-
-    it('should say hello', function() {
-      expect(_GreetingService.sayHello()).toEqual("hello there!");
-    });
+      })
+    })
   });
 });
