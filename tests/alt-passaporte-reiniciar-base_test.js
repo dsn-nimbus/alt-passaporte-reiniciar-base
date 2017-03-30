@@ -4,8 +4,8 @@ describe('alt.passaporte-reiniciar-base', function() {
   var _rootScope, _httpBackend, _locationMock;
   var _AltPassaporteReiniciarBase;
   var _AltPassaporteReiniciarBaseProvider;
-  var URL_DEV = 'https://passaporte2-dev.alterdata.com.br/passaporte-rest-api/assinantes/123/reiniciar-base/abc123'
-  var URL_HML = 'https://passaporte2-hml.alterdata.com.br/passaporte-rest-api/assinantes/123/reiniciar-base/abc123'
+  var URL_DEV = 'https://passaporte2-dev.alterdata.com.br/passaporte-rest-api/rest/assinantes/123/reiniciar-base/abc123'
+  var URL_HML = 'https://passaporte2-hml.alterdata.com.br/passaporte-rest-api/rest/assinantes/123/reiniciar-base/abc123'
 
   beforeEach(module('alt.passaporte-reiniciar-base', function(AltPassaporteReiniciarBaseProvider) {
     _AltPassaporteReiniciarBaseProvider = AltPassaporteReiniciarBaseProvider;

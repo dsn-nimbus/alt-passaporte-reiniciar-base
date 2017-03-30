@@ -1,6 +1,6 @@
 {
   "name": "alt-passaporte-reiniciar-base",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": ["dist/alt-passaporte-reiniciar-base.min.js","dist/alt-passaporte-reiniciar-base.min.css"],
   "scripts": {
     "test": "gulp unit_test",

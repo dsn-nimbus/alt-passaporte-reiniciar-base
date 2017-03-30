@@ -11,7 +11,7 @@
       this.$get = ['$http', '$q', function($http, $q) {
         return {
           reiniciar: function(idAssinante) {
-            var URL_DEL = self.URL_BASE + '/passaporte-rest-api/assinantes/' + idAssinante + '/reiniciar-base/' + self.CHAVE_PRODUTO;
+            var URL_DEL = self.URL_BASE + '/passaporte-rest-api/rest/assinantes/' + idAssinante + '/reiniciar-base/' + self.CHAVE_PRODUTO;
 
             if (ng.isUndefined(idAssinante)) {
               return $q.reject(new TypeError('Id do assinante deve ser informado.'));

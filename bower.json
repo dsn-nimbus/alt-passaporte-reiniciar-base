@@ -1,7 +1,7 @@
 {
   "name": "alt-passaporte-reiniciar-base",
   "main": ["dist/alt-passaporte-reiniciar-base.min.js","dist/alt-passaporte-reiniciar-base.min.css"],
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/dsn-nimbus/alt-passaporte-reiniciar-base.git",
   "authors": ["dsn-nimbus <ericdantas0@gmail.com>"],
   "description": "desc",
