@@ -11,7 +11,7 @@ const _styles = 'src/**/*.css';
 const _script = 'alt-passaporte-reiniciar-base.js';
 const _dist = 'dist';
 
-gulp.task('build', ['unit_test', 'build-css'], () => {
+gulp.task('build', ['unit_test'], () => {
   return gulp.src(_scripts)
     .pipe(concat(_script.toLowerCase()))
     .pipe(gulp.dest(_dist))
