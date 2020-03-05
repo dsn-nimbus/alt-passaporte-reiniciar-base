@@ -4,8 +4,8 @@ describe('alt.passaporte-reiniciar-base', function() {
   var _rootScope, _httpBackend, _locationMock;
   var _AltPassaporteReiniciarBase;
   var _AltPassaporteReiniciarBaseProvider;
-  var URL_DEV = 'https://passaporte2-dev.alterdata.com.br/passaporte-rest-api/rest/assinantes/123/reiniciar-base/abc123'
-  var URL_HML = 'https://passaporte2-hml.alterdata.com.br/passaporte-rest-api/rest/assinantes/123/reiniciar-base/abc123'
+  var URL_DEV = 'https://erpforme-dev.alterdata.com.br/passaporte-rest-api/rest/assinantes/123/reiniciar-base/abc123'
+  var URL_HML = 'https://erpforme-hml.alterdata.com.br/passaporte-rest-api/rest/assinantes/123/reiniciar-base/abc123'
 
   beforeEach(module('alt.passaporte-reiniciar-base', function(AltPassaporteReiniciarBaseProvider) {
     _AltPassaporteReiniciarBaseProvider = AltPassaporteReiniciarBaseProvider;
@@ -22,7 +22,7 @@ describe('alt.passaporte-reiniciar-base', function() {
 
   describe('provider', function() {
     it('deve ter URL_BASE com a informação correta', function() {
-      expect(_AltPassaporteReiniciarBaseProvider.URL_BASE).toEqual('https://passaporte2-dev.alterdata.com.br');
+      expect(_AltPassaporteReiniciarBaseProvider.URL_BASE).toEqual('https://erpforme-dev.alterdata.com.br');
     })
 
     it('deve ter CHAVE_PRODUTO com a informação correta', function() {
@@ -51,7 +51,7 @@ describe('alt.passaporte-reiniciar-base', function() {
       it('deve tentar enviar as informações, mas service retorna erro - url do passaporte é de produção - só deve funcionar em hml ou dev', function() {
         var _idAssinante = 123;
 
-        _AltPassaporteReiniciarBaseProvider.URL_BASE = 'https://passaporte2.alterdata.com.br';
+        _AltPassaporteReiniciarBaseProvider.URL_BASE = 'https://erpforme.alterdata.com.br';
 
         _AltPassaporteReiniciarBase.reiniciar(_idAssinante)
           .then(function() {
@@ -69,7 +69,7 @@ describe('alt.passaporte-reiniciar-base', function() {
       it('deve enviar as informações corretamente - mas servidor retorna erro', function() {
         var _idAssinante = 123;
 
-        _AltPassaporteReiniciarBaseProvider.URL_BASE = 'https://passaporte2-dev.alterdata.com.br';
+        _AltPassaporteReiniciarBaseProvider.URL_BASE = 'https://erpforme-dev.alterdata.com.br';
 
         _httpBackend.expectDELETE(URL_DEV).respond(403, {msg: 'a'})
 
@@ -88,7 +88,7 @@ describe('alt.passaporte-reiniciar-base', function() {
       it('deve enviar as informações corretamente - dev', function() {
         var _idAssinante = 123;
 
-        _AltPassaporteReiniciarBaseProvider.URL_BASE = 'https://passaporte2-dev.alterdata.com.br';
+        _AltPassaporteReiniciarBaseProvider.URL_BASE = 'https://erpforme-dev.alterdata.com.br';
 
         _httpBackend.expectDELETE(URL_DEV).respond(200)
 
@@ -106,7 +106,7 @@ describe('alt.passaporte-reiniciar-base', function() {
       it('deve enviar as informações corretamente - hml', function() {
         var _idAssinante = 123;
 
-        _AltPassaporteReiniciarBaseProvider.URL_BASE = 'https://passaporte2-hml.alterdata.com.br';
+        _AltPassaporteReiniciarBaseProvider.URL_BASE = 'https://erpforme-hml.alterdata.com.br';
 
         _httpBackend.expectDELETE(URL_HML).respond(200)
 

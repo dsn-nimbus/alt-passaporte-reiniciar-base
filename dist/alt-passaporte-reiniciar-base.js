@@ -5,7 +5,7 @@
     .provider('AltPassaporteReiniciarBase', [function() {
       var self = this;
 
-      self.URL_BASE = 'https://passaporte2-dev.alterdata.com.br';
+      self.URL_BASE = 'https://erpforme-dev.alterdata.com.br';
       self.CHAVE_PRODUTO = '';
 
       this.$get = ['$http', '$q', function($http, $q) {
@@ -17,7 +17,7 @@
               return $q.reject(new TypeError('Id do assinante deve ser informado.'));
             }
 
-            if (!(/passaporte2(-dev|-hml)/.test(self.URL_BASE))) {
+            if (!(/erpforme(-dev|-hml)/.test(self.URL_BASE))) {
               return $q.reject(new Error('Só é possível usar esta funcionalidade em dev ou hml.'));
             }
 
